@@ -1,0 +1,47 @@
+===Base de Dados app
+
+== Estrutura da tabela cliente
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_cliente**//|int(11)|Não|
+|nome|varchar(150)|Sim|NULL
+|fone|varchar(45)|Sim|NULL
+|endereco|varchar(150)|Sim|NULL
+== Extraindo dados da tabela cliente
+
+|1|TI TUBE|88888-8888|RUA 7 BITS, N8
+== Estrutura da tabela pedido
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_pedido**//|int(11)|Não|
+|cliente_id_cliente|int(11)|Sim|NULL
+|data|date|Sim|NULL
+|status|varchar(45)|Sim|NULL
+== Extraindo dados da tabela pedido
+
+== Estrutura da tabela pedido_produto
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**pedido_id_pedido**//|int(11)|Não|
+|//**produto_id_produto**//|int(11)|Não|
+|quantidade|int(11)|Sim|NULL
+== Extraindo dados da tabela pedido_produto
+
+== Estrutura da tabela produto
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_produto**//|int(11)|Não|
+|descricao|varchar(150)|Sim|NULL
+|preco|double|Sim|NULL
+|estoque|int(11)|Sim|NULL
+== Extraindo dados da tabela produto
+
+|1|CAMA DE CASAL|559.9|100
