@@ -42,6 +42,7 @@ app.initEvents = function() {
     "use strict" ;
     var fName = "app.initEvents():" ;
     app.consoleLog(fName, "entry") ;
+    onDeviceReady();
 
     // NOTE: initialize your third-party libraries and event handlers
 

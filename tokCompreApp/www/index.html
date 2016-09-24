@@ -176,6 +176,10 @@
                         <label class="narrow-control label-top-left">Data</label>
                         <input v-model="compra.data" class="wide-control form-control default" type="date">
                     </div>
+                    <div class="table-thing widget uib_w_27 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                        <label class="narrow-control label-top-left">Observação</label>
+                        <textarea rows="2" class="wide-control form-control" wrap="soft" placeholder="Coloque aqui suas observações!"></textarea>
+                    </div>
                     <button class="btn widget uib_w_20 d-margins btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" v-on:click="addCompra"><i class="glyphicon glyphicon-ok button-icon-left" data-position="left"></i>Salvar</button>
                 </div>
                 <div id="listaPedidos" class="upage-content vertical-col left hidden">
@@ -185,11 +189,33 @@
                     </div>
                     <div class="list-group widget uib_w_22 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
                         <a class="list-group-item allow-badge widget uib_w_23" data-uib="twitter%20bootstrap/list_item" data-ver="1" v-for="compra in compras | filterBy filterCompra">
-                            <h4 class="list-group-item-heading" >{{compra.cliente}}</h4>
+                            <h4 class="list-group-item-heading">{{compra.cliente}}</h4>
                             <p class="list-group-item-text">{{compra.data}}</p>
-                            <button  class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" data-position="left"></span> Gerenciar</button>
-                            <button  v-on:click="removeCompra($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" data-position="left"></span> Excluir</button>
-                            
+                            <button class="btn btn-primary btn-xs" v-on:click="gerenciarCompra($index)"><span class="glyphicon glyphicon-pencil" data-position="left"></span> Gerenciar</button>
+                            <button v-on:click="removeCompra($index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" data-position="left"></span> Excluir</button>
+
+                        </a>
+                    </div>
+                </div>
+                <div id="gerenciarCompra" class="upage-content vertical-col left hidden">
+                    <div class="panel widget uib_w_24 d-margins panel-default" data-uib="twitter%20bootstrap/panel" data-ver="1">
+                        <div class="panel-heading">
+                            <div class="widget-container">
+                                <h3 class="panel-title">TÍTULO</h3>
+                            </div>
+                            <div class="panel-body">
+                                <strong>Data:</strong>
+                                <br>
+                                <strong>Obs:</strong>
+                                <br>
+                                <button class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus" data-position="left"></span> Novo Produto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group widget uib_w_25 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+                        <a class="list-group-item allow-badge widget uib_w_26" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                            <h4 class="list-group-item-heading">Heading</h4>
+                            <p class="list-group-item-text">List item</p>
                         </a>
                     </div>
                 </div>

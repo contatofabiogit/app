@@ -1,5 +1,3 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-
 function onDeviceReady() {
     var vm = new Vue({
         el: '#app',
@@ -37,7 +35,7 @@ function onDeviceReady() {
                     }
                 });
             },
-            setCompras:function(){
+            setCompras: function () {
                 localStorage.setItem('compras', JSON.stringify(this.compras));
             },
             getClientes: function () {
@@ -47,7 +45,13 @@ function onDeviceReady() {
                 this.produtos = JSON.parse(localStorage.getItem('produtos'));
             },
             getCompras: function () {
-                this.compras = JSON.parse(localStorage.getItem('compras'));
+                var lista = JSON.parse(localStorage.getItem('compras'));
+                if (!lista) {
+                    localStorage('compras', '[]');
+                    this.getCompras;
+                } else {
+                    this.compras = lista;
+                }
             },
             removeCompra: function (index) {
                 this.compras.splice(index);
@@ -59,6 +63,9 @@ function onDeviceReady() {
                 this.setCompras();
                 this.compra = {};
                 alert("Pedido salvo!");
+            },
+            gerenciarCompra: function (index) {
+                activate_subpage("#gerenciarCompra");
             }
         },
         ready: function () {
